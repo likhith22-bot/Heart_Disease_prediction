@@ -1,0 +1,2 @@
+2026-09-25 20:45:07,430 - INFO - best params : {'var_smoothing': 1e-12}
+2026-09-25 20:45:07,432 - INFO - Test Data Accuracy : 0.8126780626780625

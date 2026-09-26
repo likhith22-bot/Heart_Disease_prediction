@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heart Disease Prediction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(255, 82, 82, 0.25),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(255, 0, 85, 0.20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e293b
+                );
+
+            padding: 30px 20px;
+        }
+
+
+        /* MAIN CONTAINER */
+
+        .main-container {
+            width: 100%;
+            max-width: 1150px;
+            min-height: 680px;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.35);
+
+            display: grid;
+
+            grid-template-columns: 42% 58%;
+
+            align-items: stretch;
+        }
+
+
+        /* =====================================================
+           LEFT SIDE
+           ===================================================== */
+
+        .left-section {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ef4444,
+                    #dc2626,
+                    #991b1b
+                );
+
+            color: white;
+
+            padding: 40px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-start;
+        }
+
+
+        .left-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -130px;
+            left: -130px;
+        }
+
+
+        .left-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.06);
+
+            bottom: -130px;
+            right: -130px;
+        }
+
+
+        /* BRAND */
+
+        .brand {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .brand-icon {
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,0.18);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 23px;
+        }
+
+
+        .brand span {
+
+            font-size: 20px;
+
+            font-weight: 700;
+        }
+
+
+        /* HEART */
+
+        .heart-container {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+
+        .heart-icon {
+
+            width: 120px;
+            height: 120px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.13);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 55px;
+
+            box-shadow:
+                0 0 0 15px rgba(255,255,255,0.04),
+                0 0 50px rgba(255,255,255,0.15);
+
+            animation: heartbeat 1.7s infinite;
+        }
+
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.08);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.08);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+
+        .left-section h1 {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            font-size: 30px;
+
+            line-height: 1.25;
+
+            margin-bottom: 15px;
+        }
+
+
+        .subtitle {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.85);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* RESULT */
+
+        .result-box {
+
+            position: relative;
+
+            z-index: 5;
+
+            margin-top: auto;
+
+            padding: 25px 20px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.14);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            backdrop-filter: blur(10px);
+
+            animation: resultAppear 0.5s ease;
+        }
+
+
+        @keyframes resultAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .result-icon {
+
+            width: 55px;
+            height: 55px;
+
+            margin: 0 auto 12px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.18);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+        }
+
+
+        .result-label {
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.75);
+
+            margin-bottom: 10px;
+        }
+
+
+        .result-box h2 {
+
+            color: white;
+
+            font-size: 22px;
+
+            line-height: 1.4;
+        }
+
+
+        .result-message {
+
+            margin-top: 10px;
+
+            font-size: 11px;
+
+            color: rgba(255,255,255,0.75);
+
+            line-height: 1.5;
+        }
+
+
+        .default-message {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: auto;
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,0.10);
+
+            text-align: center;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            color: rgba(255,255,255,0.8);
+        }
+
+
+        /* =====================================================
+           RIGHT SIDE
+           ===================================================== */
+
+        .right-section {
+
+            padding: 45px 50px;
+
+            background: #ffffff;
+        }
+
+
+        .form-header {
+
+            margin-bottom: 28px;
+        }
+
+
+        .form-header h2 {
+
+            color: #111827;
+
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .form-header p {
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        /* FORM */
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .form-group.full {
+
+            grid-column: 1 / -1;
+        }
+
+
+        .label-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 7px;
+        }
+
+
+        .label-row label {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #334155;
+        }
+
+
+        .required {
+
+            color: #dc2626;
+
+            font-size: 11px;
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #94a3b8;
+
+            pointer-events: none;
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 11px;
+
+            background: #f8fafc;
+
+            color: #1e293b;
+
+            padding: 0 42px 0 44px;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            outline: none;
+
+            transition: 0.25s;
+        }
+
+
+        select {
+
+            appearance: none;
+
+            cursor: pointer;
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color: #dc2626;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(220,38,38,0.08);
+        }
+
+
+        .select-arrow {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #94a3b8;
+
+            pointer-events: none;
+        }
+
+
+        .description {
+
+            margin-top: 6px;
+
+            color: #94a3b8;
+
+            font-size: 10px;
+
+            line-height: 1.4;
+        }
+
+
+        /* INFO */
+
+        .info-box {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 22px;
+
+            padding: 13px 15px;
+
+            border-radius: 11px;
+
+            border: 1px solid #e2e8f0;
+
+            background: #f8fafc;
+        }
+
+
+        .info-box i {
+
+            color: #dc2626;
+
+            margin-top: 2px;
+        }
+
+
+        .info-box p {
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+        }
+
+
+        /* BUTTON */
+
+        .button-container {
+
+            margin-top: 24px;
+        }
+
+
+        .predict-btn {
+
+            width: 100%;
+
+            height: 54px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef4444,
+                    #b91c1c
+                );
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            transition: 0.25s;
+
+            box-shadow:
+                0 8px 20px rgba(185,28,28,0.25);
+        }
+
+
+        .predict-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(185,28,28,0.35);
+        }
+
+
+        .footer {
+
+            margin-top: 18px;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            color: #94a3b8;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .main-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .left-section {
+
+                min-height: 500px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 15px;
+            }
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+
+                grid-column: auto;
+            }
+
+            .right-section {
+
+                padding: 30px 22px;
+            }
+
+            .left-section {
+
+                padding: 30px 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+
+    <!-- =================================================
+         LEFT SECTION
+         ================================================= -->
+
+    <section class="left-section">
+
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+            <span>
+                HeartCare AI
+            </span>
+
+        </div>
+
+
+        <div class="heart-container">
+
+            <div class="heart-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+        </div>
+
+
+        <h1>
+
+            Heart Disease
+            <br>
+            Prediction
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Machine learning based prediction
+            using selected clinical features.
+
+        </p>
+
+
+        <!-- RESULT -->
+
+        {% if prediction_text %}
+
+        <div class="result-box">
+
+            <div class="result-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <div class="result-label">
+
+                Prediction Result
+
+            </div>
+
+
+            <h2>
+
+                {{ prediction_text }}
+
+            </h2>
+
+
+            <p class="result-message">
+
+                Result generated by the trained
+                Gaussian Naive Bayes model.
+
+            </p>
+
+        </div>
+
+        {% else %}
+
+        <div class="default-message">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <br><br>
+
+            Enter the patient's information
+            and click <b>Predict Heart Disease</b>
+            to display the prediction here.
+
+        </div>
+
+        {% endif %}
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RIGHT SECTION
+         ================================================= -->
+
+    <section class="right-section">
+
+
+        <div class="form-header">
+
+            <h2>
+                Patient Information
+            </h2>
+
+            <p>
+                Enter the seven features used by
+                the trained machine learning model.
+            </p>
+
+        </div>
+
+
+        <form action="/predict" method="POST">
+
+
+            <div class="form-grid">
+
+
+                <!-- AGE -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="age">
+                            Age
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-calendar-days input-icon"></i>
+
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            min="1"
+                            max="120"
+                            placeholder="Example: 63"
+                            required
+                        >
+
+                    </div>
+
+
+                    <span class="description">
+                        Patient age in years.
+                    </span>
+
+                </div>
+
+
+                <!-- SEX -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="sex">
+                            Sex
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-venus-mars input-icon"></i>
+
+                        <select
+                            id="sex"
+                            name="sex"
+                            required
+                        >
+
+                            <option value="">
+                                Select sex
+                            </option>
+
+                            <option value="0">
+                                Female
+                            </option>
+
+                            <option value="1">
+                                Male
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+
+                    <span class="description">
+                        0 = Female | 1 = Male
+                    </span>
+
+                </div>
+
+
+                <!-- CP -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="cp">
+                            Chest Pain Type
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-heart-crack input-icon"></i>
+
+                        <select
+                            id="cp"
+                            name="cp"
+                            required
+                        >
+
+                            <option value="">
+                                Select chest pain type
+                            </option>
+
+                            <option value="0">
+                                Typical Angina
+                            </option>
+
+                            <option value="1">
+                                Atypical Angina
+                            </option>
+
+                            <option value="2">
+                                Non-Anginal Pain
+                            </option>
+
+                            <option value="3">
+                                Asymptomatic
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+
+                    <span class="description">
+                        Encoded chest pain category.
+                    </span>
+
+                </div>
+
+
+                <!-- THALACH -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="thalach">
+                            Maximum Heart Rate
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-heart-pulse input-icon"></i>
+
+                        <input
+                            type="number"
+                            id="thalach"
+                            name="thalach"
+                            min="50"
+                            max="250"
+                            placeholder="Example: 150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <span class="description">
+                        Maximum heart rate achieved during exercise.
+                    </span>
+
+                </div>
+
+
+                <!-- OLDPEAK -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="oldpeak">
+                            Oldpeak
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-chart-area input-icon"></i>
+
+                        <input
+                            type="number"
+                            step="0.1"
+                            id="oldpeak"
+                            name="oldpeak"
+                            min="0"
+                            placeholder="Example: 1.4"
+                            required
+                        >
+
+                    </div>
+
+
+                    <span class="description">
+                        Exercise-induced ST depression.
+                    </span>
+
+                </div>
+
+
+                <!-- SLOPE -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="slope">
+                            ST Segment Slope
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-chart-line input-icon"></i>
+
+                        <select
+                            id="slope"
+                            name="slope"
+                            required
+                        >
+
+                            <option value="">
+                                Select slope
+                            </option>
+
+                            <option value="0">
+                                Upsloping
+                            </option>
+
+                            <option value="1">
+                                Flat
+                            </option>
+
+                            <option value="2">
+                                Downsloping
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+
+                    <span class="description">
+                        Slope of peak exercise ST segment.
+                    </span>
+
+                </div>
+
+
+                <!-- THAL -->
+
+                <div class="form-group full">
+
+                    <div class="label-row">
+
+                        <label for="thal">
+                            Thal
+                        </label>
+
+                        <span class="required">
+                            Required
+                        </span>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-flask input-icon"></i>
+
+                        <select
+                            id="thal"
+                            name="thal"
+                            required
+                        >
+
+                            <option value="">
+                                Select thal value
+                            </option>
+
+                            <option value="0">0</option>
+
+                            <option value="1">1</option>
+
+                            <option value="2">2</option>
+
+                            <option value="3">3</option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+
+                    <span class="description">
+                        Encoded thalassemia-related measurement.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="info-box">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+
+                    Enter all values carefully. The application
+                    uses a trained machine learning model to
+                    generate a prediction.
+
+                </p>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <div class="button-container">
+
+                <button
+                    type="submit"
+                    class="predict-btn"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                    Predict Heart Disease
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+        <div class="footer">
+
+            <i class="fa-solid fa-code"></i>
+
+            Machine Learning Heart Disease Prediction System
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+</body>
+
+</html>

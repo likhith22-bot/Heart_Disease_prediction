@@ -1,0 +1,170 @@
+2026-09-25 20:45:06,342 - INFO - before applying yeojohnson X_train columns : Index(['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
+       'exang', 'oldpeak', 'slope', 'ca', 'thal'],
+      dtype='str') 
+2026-09-25 20:45:06,342 - INFO - before applying yeojohnson X_test columns : Index(['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
+       'exang', 'oldpeak', 'slope', 'ca', 'thal'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying yeojohnson X_train columns : 
+ Index(['age_yeo', 'sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying yeojohnson X_test columns : 
+ Index(['age_yeo', 'sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - before applying trimming X_train columns : 
+ Index(['age_yeo', 'sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - before applying trimming X_test columns : 
+ Index(['age_yeo', 'sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying trimming X_train columns : 
+ Index(['sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo', 'age_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying trimming X_test columns : 
+ Index(['sex_yeo', 'cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo',
+       'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo', 'age_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying trimming X_train columns : 
+ Index(['cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo', 'restecg_yeo',
+       'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo',
+       'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,754 - INFO - After applying trimming X_test columns : 
+ Index(['cp_yeo', 'trestbps_yeo', 'chol_yeo', 'fbs_yeo', 'restecg_yeo',
+       'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo',
+       'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,768 - INFO - After applying trimming X_train columns : 
+ Index(['trestbps_yeo', 'chol_yeo', 'fbs_yeo', 'restecg_yeo', 'thalach_yeo',
+       'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo',
+       'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,768 - INFO - After applying trimming X_test columns : 
+ Index(['trestbps_yeo', 'chol_yeo', 'fbs_yeo', 'restecg_yeo', 'thalach_yeo',
+       'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo',
+       'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,772 - INFO - After applying trimming X_train columns : 
+ Index(['chol_yeo', 'fbs_yeo', 'restecg_yeo', 'thalach_yeo', 'exang_yeo',
+       'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim',
+       'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_test columns : 
+ Index(['chol_yeo', 'fbs_yeo', 'restecg_yeo', 'thalach_yeo', 'exang_yeo',
+       'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim',
+       'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_train columns : 
+ Index(['fbs_yeo', 'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo',
+       'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim',
+       'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_test columns : 
+ Index(['fbs_yeo', 'restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo',
+       'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim',
+       'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_train columns : 
+ Index(['restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_test columns : 
+ Index(['restecg_yeo', 'thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo',
+       'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_train columns : 
+ Index(['thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo',
+       'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,774 - INFO - After applying trimming X_test columns : 
+ Index(['thalach_yeo', 'exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo',
+       'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,784 - INFO - After applying trimming X_train columns : 
+ Index(['exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo',
+       'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim',
+       'chol_yeo_trim', 'fbs_yeo_trim', 'restecg_yeo_trim',
+       'thalach_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_test columns : 
+ Index(['exang_yeo', 'oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo',
+       'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim',
+       'chol_yeo_trim', 'fbs_yeo_trim', 'restecg_yeo_trim',
+       'thalach_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_train columns : 
+ Index(['oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim',
+       'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim',
+       'fbs_yeo_trim', 'restecg_yeo_trim', 'thalach_yeo_trim',
+       'exang_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_test columns : 
+ Index(['oldpeak_yeo', 'slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim',
+       'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim',
+       'fbs_yeo_trim', 'restecg_yeo_trim', 'thalach_yeo_trim',
+       'exang_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_train columns : 
+ Index(['slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim',
+       'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_test columns : 
+ Index(['slope_yeo', 'ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim',
+       'cp_yeo_trim', 'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_train columns : 
+ Index(['ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim', 'slope_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,786 - INFO - After applying trimming X_test columns : 
+ Index(['ca_yeo', 'thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim', 'slope_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,800 - INFO - After applying trimming X_train columns : 
+ Index(['thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim', 'slope_yeo_trim', 'ca_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,800 - INFO - After applying trimming X_test columns : 
+ Index(['thal_yeo', 'age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim',
+       'trestbps_yeo_trim', 'chol_yeo_trim', 'fbs_yeo_trim',
+       'restecg_yeo_trim', 'thalach_yeo_trim', 'exang_yeo_trim',
+       'oldpeak_yeo_trim', 'slope_yeo_trim', 'ca_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,800 - INFO - After applying trimming X_train columns : 
+ Index(['age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim',
+       'chol_yeo_trim', 'fbs_yeo_trim', 'restecg_yeo_trim', 'thalach_yeo_trim',
+       'exang_yeo_trim', 'oldpeak_yeo_trim', 'slope_yeo_trim', 'ca_yeo_trim',
+       'thal_yeo_trim'],
+      dtype='str')
+2026-09-25 20:45:06,800 - INFO - After applying trimming X_test columns : 
+ Index(['age_yeo_trim', 'sex_yeo_trim', 'cp_yeo_trim', 'trestbps_yeo_trim',
+       'chol_yeo_trim', 'fbs_yeo_trim', 'restecg_yeo_trim', 'thalach_yeo_trim',
+       'exang_yeo_trim', 'oldpeak_yeo_trim', 'slope_yeo_trim', 'ca_yeo_trim',
+       'thal_yeo_trim'],
+      dtype='str')
