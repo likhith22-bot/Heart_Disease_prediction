@@ -547,15 +547,10 @@ pip install -r requirements.txt
 https://your-project-name.onrender.com
 ```
 
-### 💼 LinkedIn
-
-**Deployment link:**
-👉 **[ADD YOUR LINKEDIN PROFILE HERE]**
-
 ### 💻 GitHub
 
 **GitHub Repository:**
-👉 **[ADD YOUR GITHUB REPOSITORY LINK HERE]**
+👉 **[https://github.com/likhith22-bot/Heart_Disease_prediction]**
 
 ---
 
@@ -571,5 +566,5 @@ This project is developed for **educational and demonstration purposes**. The ma
 
 Computer Science & Engineering | Java Full Stack & Machine Learning Enthusiast
 
-LinkedIn: **[Add your LinkedIn link here]**
+LinkedIn: **[https://www.linkedin.com/in/likhith-naga-sai-tadikonda-a25a22316/]**
 
